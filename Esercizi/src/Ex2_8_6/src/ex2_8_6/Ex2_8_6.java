@@ -30,9 +30,6 @@ public class Ex2_8_6 {
         System.out.println("Inserire un array di 4 bit:");
         
         String readed = tastiera.nextLine();
-
-        
-        int result =  readed.charAt(0) + 4 * readed.charAt(1) + 2 * readed.charAt(2) + readed.charAt(3);
         
         System.out.println(
                 8 * Integer.parseInt(readed.substring(0, 1)) +
