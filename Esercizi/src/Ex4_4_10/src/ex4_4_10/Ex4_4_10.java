@@ -29,7 +29,7 @@ public class Ex4_4_10 {
         int count = 0, t = 0, c = 0;
         
         System.out.println("Per ciascun lancio della moneta, inserisci t se è uscito testa e c se è uscito croce.");
-        String read = "";
+        String read;
         
         while(count < 8){
            System.out.println("Lancio " + (count + 1) + ": "); 
@@ -37,19 +37,16 @@ public class Ex4_4_10 {
            read = tastiera.nextLine();
            
            switch (read){
-               case "t":{
+               case "t" -> {
                    t++;
                    count++;
-                   break;
                }
-               case "c":{
+               case "c" -> {
                    c++;
                    count++;
-                   break;
-               }   
-               default:{
+               }
+               default -> {
                    System.out.println("Non è un valore valido");
-                   break;
                }
            }
            
