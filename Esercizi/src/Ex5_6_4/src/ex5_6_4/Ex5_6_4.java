@@ -29,20 +29,22 @@ public class Ex5_6_4 {
         int a = 0, b = 0, c = 0;
         
         do{
-            System.out.println("Inserisci il primo intero:");
+            System.out.println("Inserisci il massimo intero:");
             a = tastiera.nextInt();
-            System.out.println("Inserisci il secondo intero:");
+            System.out.println("Inserisci il minimo intero:");
             b = tastiera.nextInt();
+            System.out.println("Inserisci il valore intero:");
+            c = tastiera.nextInt();
             
-            System.out.println("Risultato del metodo: " + Ex5_6_4.divisibile(a,b));
+            System.out.println("Risultato del metodo: " + Ex5_6_4.metodo(a,b,c));
             System.out.println("Premere 'c' per ripetere, 'e' per uscire");
         }while(tastiera.next().equalsIgnoreCase("c"));
         
         
     }
     
-    public static boolean divisibile(int first, int second){
-        return (first % second == 0);
+    public static boolean metodo(int max, int min, int value){
+        return (value <= max && value >= min);
     }
     
 }
