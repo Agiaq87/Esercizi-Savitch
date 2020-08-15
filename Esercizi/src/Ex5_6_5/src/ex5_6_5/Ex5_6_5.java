@@ -34,7 +34,7 @@ public class Ex5_6_5 {
                        
             System.out.println("Risultato del metodo: " + Ex5_6_5.contavocali(nm));
             System.out.println("Premere 'c' per ripetere, 'e' per uscire");
-        }while(tastiera.next().equalsIgnoreCase("c"));
+        }while(tastiera.nextLine().equalsIgnoreCase("c"));
         
         
     }
