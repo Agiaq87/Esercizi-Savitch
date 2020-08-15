@@ -12,21 +12,21 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-package ex5_6_3;
+package ex5_6_4;
 
 import java.util.Scanner;
 /**
  *
  * @author alessandrogiaquinto
  */
-public class Ex5_6_3 {
+public class Ex5_6_4 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Scanner tastiera = new Scanner(System.in);
-        int a = 0, b = 0;
+        int a = 0, b = 0, c = 0;
         
         do{
             System.out.println("Inserisci il primo intero:");
@@ -34,7 +34,7 @@ public class Ex5_6_3 {
             System.out.println("Inserisci il secondo intero:");
             b = tastiera.nextInt();
             
-            System.out.println("Risultato del metodo: " + Ex5_6_3.divisibile(a,b));
+            System.out.println("Risultato del metodo: " + Ex5_6_4.divisibile(a,b));
             System.out.println("Premere 'c' per ripetere, 'e' per uscire");
         }while(tastiera.next().equalsIgnoreCase("c"));
         
