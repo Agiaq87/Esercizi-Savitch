@@ -79,34 +79,13 @@ public class CombSort implements SorterAlgorithm{
     
     public static void combSort(int[] arr) {
         int temp = 0;
+        int gap = arr.length;
+        double shrink = 1.3;
         boolean sorted = false;
         
-        do {
-            for (int i = 0; i < arr.length - 1; i+=2) {
-                if (arr[i] > arr[i+1]) {
-                    temp = arr[i];
-                    arr[i+1] = arr[i];
-                    arr[i] = temp;
-                    sorted = true;
-                }
-                U.debug("oddEvenSort",arr);
-            }
-            
-            if (!sorted) {
-                break;
-            }
-            sorted = false;
-            
-            for (int i = 1; i < arr.length - 1; i+=2){
-                if (arr[i] > arr[i+1]) {
-                    temp = arr[i];
-                    arr[i+1] = arr[i];
-                    arr[i] = temp;
-                    sorted = true;
-                }
-                U.debug("oddEvenSort",arr);
-            }
-        }while(!sorted);
+        while (!sorted) {
+            gap = Math.floorDiv(gap, shrink);
+        }
     }
     
     private int[] arr;
