@@ -25,11 +25,10 @@ import SortAlgorithmUtils.U;
  */
 public class QuickSort implements SorterAlgorithm{
 
-    public QuickSort() {
-    }
-
     public QuickSort(int[] arr) {
         this.arr = arr;
+        this.start = 0;
+        this.end = this.arr.length;
     }
 
     @Override
@@ -46,17 +45,38 @@ public class QuickSort implements SorterAlgorithm{
     }
     
     public void quick() {
-        int temp = 0;
-        int pos = 1;
+        if (arr == null || arr.length == 0 || start >= end) {
+            return;
+        }
         
-        while (pos < arr.length - 1){
-            while (pos > 0 && arr[pos] > arr[pos +1]) {
-                temp = arr[pos+1];
-                arr[pos+1] = arr[pos];
-                arr[pos] = temp;
-                pos--;
+        int middle = start + (end - start)/2;
+        int pivot = arr[middle];
+        
+        int i = start, j = end;
+        
+        while (i <= j) {
+            while (arr[i] < pivot) {
+                i++;
             }
-            pos++;
+            while (arr[j] > pivot) {
+                j--;
+            }
+            
+            if (i <= j) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        
+        if (start < j) {
+            quickSort(arr, start, j);
+        }
+        
+        if (end > i){
+            quickSort(arr,i,end);
         }
     }
     
@@ -65,20 +85,43 @@ public class QuickSort implements SorterAlgorithm{
         this.quick();
     }
     
-    public static void quickSort(int[] arr) {
-        int temp = 0;
-        int pos = 0;
+    public static void quickSort(int[] arr, int start, int end) {
+        if (arr == null || arr.length == 0 || start >= end) {
+            return;
+        }
         
-        while (pos < arr.length - 1){
-            while (pos >= 0 && arr[pos] > arr[pos +1]) {
-                temp = arr[pos+1];
-                arr[pos+1] = arr[pos];
-                arr[pos] = temp;
-                pos--;
+        int middle = start + (end - start)/2;
+        int pivot = arr[middle];
+        
+        int i = start, j = end;
+        
+        while (i <= j) {
+            while (arr[i] < pivot) {
+                i++;
             }
-            pos++;
+            while (arr[j] > pivot) {
+                j--;
+            }
+            
+            if (i <= j) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        
+        if (start < j) {
+            quickSort(arr, start, j);
+        }
+        
+        if (end > i){
+            quickSort(arr,i,end);
         }
     }
     
+    
     private int[] arr;
+    private final int start,end;
 }
