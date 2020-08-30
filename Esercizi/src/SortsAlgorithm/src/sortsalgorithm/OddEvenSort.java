@@ -47,7 +47,7 @@ public class OddEvenSort implements SorterAlgorithm{
     
     public void oddEven() {
         int temp = 0;
-        boolean swap = false;
+        boolean sorted = false;
         
         do {
             for (int i = 0; i < arr.length - 1; i+=2) {
@@ -55,24 +55,24 @@ public class OddEvenSort implements SorterAlgorithm{
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
             }
             
-            if (!swap) {
+            if (!sorted) {
                 break;
             }
-            swap = false;
+            sorted = false;
             
             for (int i = 1; i < arr.length - 1; i+=2){
                 if (arr[i] > arr[i+1]) {
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
             }
-        }while(!swap);
+        }while(!sorted);
     }
     
     @Override
@@ -82,7 +82,7 @@ public class OddEvenSort implements SorterAlgorithm{
     
     public static void oddEvenSort(int[] arr) {
         int temp = 0;
-        boolean swap = false;
+        boolean sorted = false;
         
         do {
             for (int i = 0; i < arr.length - 1; i+=2) {
@@ -90,26 +90,26 @@ public class OddEvenSort implements SorterAlgorithm{
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
                 U.debug("oddEvenSort",arr);
             }
             
-            if (!swap) {
+            if (!sorted) {
                 break;
             }
-            swap = false;
+            sorted = false;
             
             for (int i = 1; i < arr.length - 1; i+=2){
                 if (arr[i] > arr[i+1]) {
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
                 U.debug("oddEvenSort",arr);
             }
-        }while(!swap);
+        }while(!sorted);
     }
     
     private int[] arr;

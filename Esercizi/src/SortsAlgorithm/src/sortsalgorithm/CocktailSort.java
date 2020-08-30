@@ -48,7 +48,7 @@ public class CocktailSort implements SorterAlgorithm{
     
     public void cocktail() {
         int temp = 0;
-        boolean swap = false;
+        boolean sorted = false;
         
         do {
             for (int i = 0; i < arr.length - 1; i++) {
@@ -56,24 +56,24 @@ public class CocktailSort implements SorterAlgorithm{
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
             }
             
-            if (!swap) {
+            if (!sorted) {
                 break;
             }
-            swap = false;
+            sorted = false;
             
             for (int i = arr.length - 2; i > 0; i--){
                 if (arr[i] > arr[i+1]) {
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
             }
-        }while(!swap);
+        }while(!sorted);
     }
     
     @Override
@@ -83,7 +83,7 @@ public class CocktailSort implements SorterAlgorithm{
     
     public static void cocktailSort(int[] arr) {
         int temp = 0;
-        boolean swap = false;
+        boolean sorted = false;
         
         do {
             for (int i = 0; i < arr.length - 1; i++) {
@@ -91,26 +91,26 @@ public class CocktailSort implements SorterAlgorithm{
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
                 U.debug("cocktailSort",arr);
             }
             
-            if (!swap) {
+            if (!sorted) {
                 break;
             }
-            swap = false;
+            sorted = false;
             
             for (int i = arr.length - 2; i > 0; i--){
                 if (arr[i] > arr[i+1]) {
                     temp = arr[i];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    swap = true;
+                    sorted = true;
                 }
                 U.debug("cocktailSort",arr);
             }
-        }while(!swap);
+        }while(!sorted);
     }
     
     private int[] arr;

@@ -35,6 +35,7 @@ public class SelectionSort implements SorterAlgorithm{
         this.arr = arr;
     }
 
+    @Override
     public int[] getArr() throws NullArrayException {
         if (this.arr == null) {
             throw new NullArrayException("Array it's NULL, you nedd to set it");
@@ -42,6 +43,7 @@ public class SelectionSort implements SorterAlgorithm{
         return arr;
     }
 
+    @Override
     public void setArr(int[] arr) {
         this.arr = arr;
     }

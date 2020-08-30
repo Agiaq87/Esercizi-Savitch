@@ -50,19 +50,19 @@ public class BubbleSort implements SorterAlgorithm{
     public void bubble() {
         int n = arr.length;
         int temp = 0;
-        boolean swap = false;
+        boolean sorted = false;
         
         for (int i = 0; i < n; i++) {
-            swap = false;
+            sorted = false;
             for (int j = 0; j < n-1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    swap = true;
+                    sorted = true;
                 }
             }
-            if (!swap) { // Se non c'è stato scambio, hai finito
+            if (!sorted) { // Se non c'è stato scambio, hai finito
                 break;
             }
         }
@@ -76,21 +76,21 @@ public class BubbleSort implements SorterAlgorithm{
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         int temp = 0;
-        boolean swap = false;
+        boolean sorted = false;
         
         for (int i = 0; i < n; i++) {
             U.debug("bubbleSort",arr);
-            swap = false;
+            sorted = false;
             for (int j = 0; j < n-1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    swap = true;
+                    sorted = true;
                 }
                 U.debug("bubbleSort",arr);
             }
-            if (!swap) { // Se non c'è stato scambio, hai finito
+            if (!sorted) { // Se non c'è stato scambio, hai finito
                 break;
             }
         }
