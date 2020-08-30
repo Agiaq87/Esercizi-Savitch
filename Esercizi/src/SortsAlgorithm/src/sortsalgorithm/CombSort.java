@@ -44,32 +44,26 @@ public class CombSort implements SorterAlgorithm{
     
     public void comb() {
         int temp = 0;
+        double gap = arr.length;
         boolean sorted = false;
         
-        do {
-            for (int i = 0; i < arr.length - 1; i+=2) {
-                if (arr[i] > arr[i+1]) {
-                    temp = arr[i];
-                    arr[i+1] = arr[i];
-                    arr[i] = temp;
-                    sorted = true;
-                }
+        while (!sorted) {
+            gap /= 1.3;
+            
+            if (gap <= 1) {
+                sorted = true;
+                gap = 1;
             }
             
-            if (!sorted) {
-                break;
-            }
-            sorted = false;
-            
-            for (int i = 1; i < arr.length - 1; i+=2){
+            for (int i = 0; i + gap < arr.length - 1; i++) {
                 if (arr[i] > arr[i+1]) {
-                    temp = arr[i];
+                    temp = arr[i+1];
                     arr[i+1] = arr[i];
                     arr[i] = temp;
-                    sorted = true;
+                    sorted = false;
                 }
             }
-        }while(!sorted);
+        }
     }
     
     @Override
@@ -79,12 +73,25 @@ public class CombSort implements SorterAlgorithm{
     
     public static void combSort(int[] arr) {
         int temp = 0;
-        int gap = arr.length;
-        double shrink = 1.3;
+        double gap = arr.length;
         boolean sorted = false;
         
         while (!sorted) {
-            gap = Math.floorDiv(gap, shrink);
+            gap /= 1.3;
+            
+            if (gap <= 1) {
+                sorted = true;
+                gap = 1;
+            }
+            
+            for (int i = 0; i + gap < arr.length - 1; i++) {
+                if (arr[i] > arr[i+1]) {
+                    temp = arr[i+1];
+                    arr[i+1] = arr[i];
+                    arr[i] = temp;
+                    sorted = false;
+                }
+            }
         }
     }
     

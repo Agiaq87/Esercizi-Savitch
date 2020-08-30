@@ -35,35 +35,40 @@ public class SortsAlgorithm {
         U.print("Print the new array");
         U.print(arr);
         
-        
         U.print("SelectionSort");
         SelectionSort.selectionSort(arr);
         U.print(arr);
         
-        another(arr, 10, 999);
+        arr = another(10, 999);
         
         U.print("BubbleSort");
         BubbleSort.bubbleSort(arr);
         U.print(arr);
         
-        another(arr, 10, 999);
+        arr = another(10, 999);
         
         U.print("CocktailSort");
         CocktailSort.cocktailSort(arr);
         U.print(arr);
         
-        another(arr, 10, 999);
+        arr = another(10, 999);
         
         U.print("OddEven sort");
         OddEvenSort.oddEvenSort(arr);
         U.print(arr);
+        
+        arr = another(10, 999);
+        
+        U.print("Comb sort");
+        CombSort.combSort(arr);
+        U.print(arr);
     }
     
-    public static void another(int[] arr, int len, int randomSeed) {
+    public static int[] another(int len, int randomSeed) {
         U.print("Make another array");
-        arr = null;
-        arr = ArrayMaker.makeInt(len, randomSeed);
+        var arr = ArrayMaker.makeInt(len, randomSeed);
         U.print(arr);
+        return arr;
     }
     
 }
