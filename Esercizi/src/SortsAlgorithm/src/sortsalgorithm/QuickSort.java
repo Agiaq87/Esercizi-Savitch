@@ -17,18 +17,18 @@ package sortsalgorithm;
 import SortAlgorithmUtils.U;
 
 /**
-    Worst-case performance	{\displaystyle O(n^{2})}O(n^{2})
-    Best-case performance	{\displaystyle O(n)}O(n)
-    Average performance         {\displaystyle O(n^{2})}O(n^{2})
-    Worst-case space complexity	{\displaystyle O(1)}O(1) auxiliary
+    Worst-case performance	O(n2)
+    Best-case performance	O(n log n) (simple partition) or O(n) (three-way partition and equal keys)
+    Average performance         O(n log n)
+    Worst-case space complexity	O(n) auxiliary (naive) O(log n) auxiliary
  * @author alessandrogiaquinto
  */
-public class GnomeSort implements SorterAlgorithm{
+public class QuickSort implements SorterAlgorithm{
 
-    public GnomeSort() {
+    public QuickSort() {
     }
 
-    public GnomeSort(int[] arr) {
+    public QuickSort(int[] arr) {
         this.arr = arr;
     }
 
@@ -45,7 +45,7 @@ public class GnomeSort implements SorterAlgorithm{
         this.arr = arr;
     }
     
-    public void gnome() {
+    public void quick() {
         int temp = 0;
         int pos = 1;
         
@@ -62,10 +62,10 @@ public class GnomeSort implements SorterAlgorithm{
     
     @Override
     public void run() {
-        this.gnome();
+        this.quick();
     }
     
-    public static void gnomeSort(int[] arr) {
+    public static void quickSort(int[] arr) {
         int temp = 0;
         int pos = 0;
         

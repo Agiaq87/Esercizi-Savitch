@@ -10,7 +10,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02113-1301, USA.
 */
 package TestSortAlgorithm;
 
@@ -29,7 +29,7 @@ public class SortsAlgorithm {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] arr = ArrayMaker.makeInt(10, 999);
+        int[] arr = ArrayMaker.makeInt(13, 999);
         U.debugEnable = false;
         
         U.print("Print the new array");
@@ -39,33 +39,39 @@ public class SortsAlgorithm {
         SelectionSort.selectionSort(arr);
         U.print(arr);
         
-        arr = another(10, 999);
+        arr = another(13, 999);
         
         U.print("BubbleSort");
         BubbleSort.bubbleSort(arr);
         U.print(arr);
         
-        arr = another(10, 999);
+        arr = another(13, 999);
         
         U.print("CocktailSort");
         CocktailSort.cocktailSort(arr);
         U.print(arr);
         
-        arr = another(10, 999);
+        arr = another(13, 999);
         
         U.print("OddEven sort");
         OddEvenSort.oddEvenSort(arr);
         U.print(arr);
         
-        arr = another(10, 999);
+        arr = another(13, 999);
         
         U.print("Comb sort");
         CombSort.combSort(arr);
         U.print(arr);
         
-        arr = another(10, 999);
+        arr = another(13, 999);
         
         U.print("Gnome sort");
+        GnomeSort.gnomeSort(arr);
+        U.print(arr);
+        
+        arr = another(13, 999);
+        
+        U.print("Quick sort");
         GnomeSort.gnomeSort(arr);
         U.print(arr);
     }
