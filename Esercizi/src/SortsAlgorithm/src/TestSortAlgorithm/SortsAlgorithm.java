@@ -62,6 +62,12 @@ public class SortsAlgorithm {
         U.print("Comb sort");
         CombSort.combSort(arr);
         U.print(arr);
+        
+        arr = another(10, 999);
+        
+        U.print("Gnome sort");
+        GnomeSort.gnomeSort(arr);
+        U.print(arr);
     }
     
     public static int[] another(int len, int randomSeed) {
