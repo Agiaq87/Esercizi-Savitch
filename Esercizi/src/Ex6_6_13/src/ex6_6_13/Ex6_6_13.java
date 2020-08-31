@@ -23,15 +23,18 @@ import java.util.Scanner;
 public class Ex6_6_13 {
 
     /**
+     * DA RIVEDERE
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         var figura = new int[4][5];
+        double media = 0.0;
         
         // Popolamento array con valori random
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 5; j++) {
                 figura[i][j] = (int) Math.floor( Math.random()*99 ); 
+                media += figura[i][j];
             }
         }
         
@@ -42,6 +45,8 @@ public class Ex6_6_13 {
             }
             System.out.println();
         }
+        
+        System.out.println("La media calcolata è:" + (media/(5*4)));
         
         Scanner s = new Scanner(System.in);
         
